@@ -1,0 +1,73 @@
+[
+    {
+      "userName": "Rahim Ahmed",
+      "userEmail": "rahim.ahmed@example.com",
+      "title": "Solar Lamps for Rural Areas",
+      "type": "Startup",
+      "minAmount": 10000,
+      "deadline": "2025-03-25",
+      "photo": "https://i.postimg.cc/zB8gsGm9/a2-727x409.jpg",
+      "description": "Providing affordable solar-powered lamps to improve education and safety in rural areas of Bangladesh."
+    },
+    {
+      "userName": "Ayesha Khatun",
+      "userEmail": "ayesha.khatun@example.com",
+      "title": "Save Sundarbans Tigers",
+      "type": "Creative Ideas",
+      "minAmount": 20000,
+      "deadline": "2025-04-15",
+      "photo": "https://i.postimg.cc/Dwnc4L1G/images.jpg",
+      "description": "Raising awareness and funds for protecting the endangered Royal Bengal Tigers in the Sundarbans."
+    },
+    {
+      "userName": "Shakib Al Hasan",
+      "userEmail": "shakib.hasan@example.com",
+      "title": "Flood Relief for Char Areas",
+      "type": "Personal Issue",
+      "minAmount": 15000,
+      "deadline": "2025-02-28",
+      "photo": "https://i.postimg.cc/TYXVBg7s/BGD-20200717-WFP-Sayed-Asif-Mahmud-DJI-0114.jpg",
+      "description": "Supporting flood-affected families in char areas with food, medicine, and shelter."
+    },
+    {
+      "userName": "Nusrat Jahan",
+      "userEmail": "nusrat.jahan@example.com",
+      "title": "Handicrafts for Women Empowerment",
+      "type": "Business",
+      "minAmount": 12000,
+      "deadline": "2025-04-05",
+      "photo": "https://i.postimg.cc/dVs8VvKm/Optimized-DSC-9417-1024x673.jpg",
+      "description": "Empowering women through training and selling handmade crafts to improve livelihoods in rural Bangladesh."
+    },
+    {
+      "userName": "Tanvir Rahman",
+      "userEmail": "tanvir.rahman@example.com",
+      "title": "E-Learning Platform for Students",
+      "type": "Startup",
+      "minAmount": 20000,
+      "deadline": "2025-03-30",
+      "photo": "https://i.postimg.cc/43MtP9HB/e-learning-app.jpg",
+      "description": "Launching an affordable e-learning platform to help Bangladeshi students access quality education online."
+    },
+    {
+      "userName": "Farhana Akter",
+      "userEmail": "farhana.akter@example.com",
+      "title": "Clean Water Initiative",
+      "type": "Creative Ideas",
+      "minAmount": 18000,
+      "deadline": "2025-05-10",
+      "photo": "https://i.postimg.cc/cC7ndk9b/1700368682-noticias-thebighand-5-1120x550.jpg",
+      "description": "Bringing clean and safe drinking water to remote villages in Bangladesh through sustainable technology."
+    },
+    {
+      "userName": "Rashed Khan",
+      "userEmail": "rashed.khan@example.com",
+      "title": "Recycling Plastic Waste",
+      "type": "Startup",
+      "minAmount": 25000,
+      "deadline": "2025-04-20",
+      "photo": "https://i.postimg.cc/FsmSTm15/blog-banner-plastic-1.jpg",
+      "description": "Establishing a startup focused on recycling plastic waste and creating eco-friendly products in Bangladesh."
+    }
+  ]
+  

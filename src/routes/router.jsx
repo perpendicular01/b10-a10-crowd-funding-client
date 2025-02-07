@@ -4,6 +4,10 @@ import AuthLayout from "../LayOut/AuthLayout";
 import Login from "../Pages/Login";
 import HomePage from "../Pages/HomePage";
 import Register from "../Pages/Register";
+import CampaignPage from "../Pages/CampaignPage";
+import MyCampaignPage from "../Pages/MyCampaignPage";
+import MyDonationPage from "../Pages/MyDonationPage";
+import AddCampaignPage from "../Pages/AddCampaignPage";
 
 const router = createBrowserRouter([
     {
@@ -14,6 +18,24 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <HomePage></HomePage>
             },
+            {
+                path: '/myCampaigns',
+                element: <MyCampaignPage></MyCampaignPage> ,
+            },
+            {
+                path: '/myDonations',
+                element: <MyDonationPage></MyDonationPage> ,
+            },
+            {
+                path: '/allCampaigns',
+                element: <CampaignPage></CampaignPage> ,
+            },
+            {
+                path: '/addCampaign',
+                element: <AddCampaignPage></AddCampaignPage> ,
+            },
+            
+            
         ],
     },
 
