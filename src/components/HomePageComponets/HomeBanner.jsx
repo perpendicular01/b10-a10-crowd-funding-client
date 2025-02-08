@@ -8,6 +8,7 @@ import slider3 from '../../assets/banner3.avif';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 
 const HomeBanner = () => {
   useEffect(() => {
@@ -71,9 +72,9 @@ const HomeBanner = () => {
                 {slide.subtitle}
               </p>
               
-              <button className="text-black bg-[#F2EEE0] text-sm md:text-lg  rounded-xl py-1 md:py-2 px-3 md:px-4  flex items-center gap-1">
+              <Link to='/allCampaigns'> <button className="text-black bg-[#F2EEE0] text-sm md:text-lg  rounded-xl py-1 md:py-2 px-3 md:px-4  flex items-center gap-1">
                  <MdOutlineExplore />  {slide.buttonText}
-              </button>
+              </button> </Link>
             </div>
           </div>
 

@@ -1,4 +1,5 @@
 import HomeBanner from "../components/HomePageComponets/HomeBanner";
+import HomeCampaigns from "../components/HomePageComponets/HomeCampaigns";
 import HomeMission from "../components/HomePageComponets/HomeMission";
 
 const HomePage = () => {
@@ -16,6 +17,8 @@ const HomePage = () => {
                 </div>
 
             </section>
+
+            <HomeCampaigns></HomeCampaigns>
             
         </div>
     );
