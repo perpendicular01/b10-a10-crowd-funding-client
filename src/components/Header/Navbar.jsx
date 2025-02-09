@@ -53,7 +53,7 @@ const Navbar = () => {
         </li>
         <li>
             <NavLink
-                to="/myCampaign"
+                to="/myCampaigns"
                 className={({ isActive }) => isActive ? "font-bold" : "hover:font-semibold"}
             >
                 My Campaign
@@ -61,7 +61,7 @@ const Navbar = () => {
         </li>
         <li>
             <NavLink
-                to="/myDonation"
+                to="/myDonations"
                 className={({ isActive }) => isActive ? "font-bold" : "hover:font-semibold"}
             >
                 My Donation
@@ -103,8 +103,20 @@ const Navbar = () => {
                                 <img className="rounded-full w-9 h-9 lg:w-10 lg:h-10" src={user.photoURL} alt="" />
                             </div>
                             <div>
-                                <Link onClick={handleSignOut}><button className={`px-2 md:px-4 py-2 rounded-lg text-sm md:text-base  font-medium ${path === '/auth/login' ? "text-white bg-[#6C5B1D]" : "bg-[#FFF2C2] text-base"}`}>  Logout </button></Link>
-                            </div>
+  <Link>
+    <button
+      onClick={handleSignOut}
+      className={`px-2 md:px-4 py-2 rounded-lg text-sm md:text-base font-medium ${
+        path === '/auth/login'
+          ? 'text-white bg-[#6C5B1D]'
+          : 'bg-[#BAC2CA] text-black'
+      }`}
+    >
+      Logout
+    </button>
+  </Link>
+</div>
+
                         </div>
                         :
                         <div className="flex items-center gap-2 md:gap-5 ">

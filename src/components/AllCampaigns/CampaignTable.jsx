@@ -71,7 +71,7 @@ const CampaignTable = () => {
                                     <td>{deadline}</td>
                                     <td>
                                         <Link to={`/campaign/${id}`}>
-                                            <button className="bg-gray-300  px-3 py-1 rounded-md text-black font-medium">
+                                            <button className="bg-blue-200  px-3 py-1 rounded-md text-black font-medium">
                                                 see more
                                             </button>
                                         </Link>
