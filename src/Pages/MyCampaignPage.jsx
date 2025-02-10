@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Contexts/AuthProvider';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const MyCampaignPage = () => {
     const [campaigns, setCampaigns] = useState([]);
@@ -9,6 +10,9 @@ const MyCampaignPage = () => {
     
     
     useEffect(()=> {
+
+        if(!user?.email) return; 
+        
         const fetchCampaigns = async() => {
             const res = await fetch(`http://localhost:5000/myCampaigns?email=${user.email}`)
             const data = await res.json()
@@ -17,7 +21,49 @@ const MyCampaignPage = () => {
         }
         fetchCampaigns();
         
-    }, [user.email]);
+    }, [user]);
+
+    const handleDeleteCampaign = async (id) => {
+        
+        const alert = await Swal.fire({
+          title: "Are you sure?",
+          text: "You can not be able to restore this",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "delete it"
+        });
+      
+        if(alert.isConfirmed){
+          await Swal.fire({
+            icon: "success",
+            title: "Deleted!",
+            text: "Your campaign has been deleted",
+            
+          });
+
+          const res1 = await fetch(`http://localhost:5000/deleteCampaigns/${id}`, {
+            method: 'DELETE',
+          });
+          
+          
+          const res2 = await fetch(`http://localhost:5000/deleteDonation/${id}`, {
+            method: 'DELETE',
+          })
+
+          if(res1.ok && res2.ok){
+            setCampaigns(campaigns.filter(it => it._id !== id));
+          } 
+          else{
+            Swal.fire({
+              title: "Error",
+              text: "Failed to delete the campaign.",
+              icon: "error",
+            });
+          }
+        }
+    }
 
     return (
         <div className='w-[90%] mx-auto mt-20 mb-80   '>
@@ -56,8 +102,8 @@ const MyCampaignPage = () => {
                                         </Link>
                                     </td>
                                     <td>
-                                        <Link to={`/campaign/${id}`}>
-                                            <button className="bg-red-700  px-3 py-1 rounded-md text-white font-medium">
+                                        <Link>
+                                            <button onClick={() => handleDeleteCampaign(id)} className="bg-red-700  px-3 py-1 rounded-md text-white font-medium">
                                                 delete
                                             </button>
                                         </Link>

@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaUser } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { Link, useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../Contexts/AuthProvider';
 
 const CampaignDetails = () => {
+    const { user } = useContext(AuthContext)
     const [active, setActive] = useState('')
     const campaign = useLoaderData()
     const { _id: id, userEmail, userName, photo, description, minAmount, deadline, type, title } = campaign
@@ -21,7 +24,47 @@ const CampaignDetails = () => {
 
     }, [deadline])
 
-    const handleDonate = () => {
+    const handleDonate = async() => {
+        const currDate = new Date();
+        const deadDate = new Date(deadline)
+
+        // deadline par hoiya gele
+        if(currDate > deadDate){
+            Swal.fire({
+                icon: "error",
+                title: "sorry.. deadline is over...",
+            });
+
+            return;
+        }
+
+        // console.log(user)
+        const donatedUser = {
+            name : user.displayName,
+            email : user.email,
+            campaignId : id,
+            title : title,
+            photo : photo,
+            type: type,
+            description : description
+
+        }
+
+        const res  = await fetch('http://localhost:5000/usersDonations', {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json',
+            },
+            body: JSON.stringify(donatedUser)
+        })
+        const data = await res.json();
+        // console.log(data)
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Donated Successfully'
+        })
+
 
     }
 
@@ -76,7 +119,7 @@ const CampaignDetails = () => {
                     </h2>
                     
                     
-                    <button className="mt-4 lg:mt-6  bg-[#FFF2C2]  text-black font-semibold px-6 md:px-4 lg:px-6 py-2 md:py-1 lg:py-2 rounded-lg shadow-md transition-all">
+                    <button onClick={handleDonate} className="mt-4 lg:mt-6  bg-[#FFF2C2]  text-black font-semibold px-6 md:px-4 lg:px-6 py-2 md:py-1 lg:py-2 rounded-lg shadow-md transition-all">
                         Donate Now
                     </button>
                     
