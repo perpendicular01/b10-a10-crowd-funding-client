@@ -10,7 +10,7 @@ const CampaignTable = () => {
 
     useEffect(() => {
         const fetchCampaigns = async () => {
-            const res = await fetch('http://localhost:5000/campaigns');
+            const res = await fetch('https://b10-a10-crowd-funding-server.vercel.app/campaigns');
             const data = await res.json();
 
             setCampaigns(data);
@@ -39,8 +39,8 @@ const CampaignTable = () => {
     return (
         <div className='w-[90%] mx-auto mt-14     '>
             <div className='flex justify-between items-center   mb-4 md:mb-8 '>
-                <h3 className='font-semibold text-black text-2xl ml-8  '> See all campaigns here </h3>
-                <button onClick={handleSortCampaigns} className="bg-green-400 hover:bg-green-900 transition-colors duration-200 px-6 py-1 rounded-md text-black"> Sort  </button>
+                <h3 className='font-semibold text-black text-2xl ml-1 md:ml-2   '> All campaigns here </h3>
+                <button onClick={handleSortCampaigns} className="bg-green-400 hover:bg-green-900 transition-colors duration-200 px-6 py-1 font-medium rounded-md text-black"> Sort  </button>
             </div>
 
             {/* campaigns in table format */}

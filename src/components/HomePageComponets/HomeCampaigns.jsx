@@ -6,11 +6,11 @@ const HomeCampaigns = () => {
 
     useEffect(()=> {
         const fetchCampaigns = async() => {
-            const res = await fetch('http://localhost:5000/campaigns');
+            const res = await fetch('https://b10-a10-crowd-funding-server.vercel.app/campaigns');
             const data = await res.json()
 
             setCampaigns(data.slice(0, 6));
-            console.log(data)
+            // console.log(data)
         }
 
         fetchCampaigns();

@@ -50,7 +50,7 @@ const CampaignDetails = () => {
 
         }
 
-        const res  = await fetch('http://localhost:5000/usersDonations', {
+        const res  = await fetch('https://b10-a10-crowd-funding-server.vercel.app/usersDonations', {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json',

@@ -25,7 +25,7 @@ const AddCampaignForm = () => {
 
 
         // database e store korte hbe
-        const res = await fetch('http://localhost:5000/campaigns', {
+        const res = await fetch('https://b10-a10-crowd-funding-server.vercel.app/campaigns', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -136,7 +136,7 @@ const AddCampaignForm = () => {
                     <div className="form-control w-[49%]">
                         <label className="label mb-1">
                             <span className="label-text text-black text-lg">
-                                Minimum Donation Amount
+                                Min Amount
                             </span>
                         </label>
                         <input

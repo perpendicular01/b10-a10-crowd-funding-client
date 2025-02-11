@@ -10,6 +10,7 @@ import MyDonationPage from "../Pages/MyDonationPage";
 import AddCampaignPage from "../Pages/AddCampaignPage";
 import CampaignDetails from "../Pages/CampaignDetails";
 import UpdateCampaign from "../Pages/UpdateCampaign";
+import PrivateRouter from "./PrivateRouter";
 
 const router = createBrowserRouter([
     {
@@ -22,11 +23,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myCampaigns',
-                element: <MyCampaignPage></MyCampaignPage> ,
+                element: <PrivateRouter><MyCampaignPage></MyCampaignPage></PrivateRouter> ,
             },
             {
                 path: '/myDonations',
-                element: <MyDonationPage></MyDonationPage> ,
+                element: <PrivateRouter><MyDonationPage></MyDonationPage></PrivateRouter> ,
             },
             {
                 path: '/allCampaigns',
@@ -34,25 +35,25 @@ const router = createBrowserRouter([
             },
             {
                 path: '/campaign/:id',
-                element: <CampaignDetails></CampaignDetails>,
+                element: <PrivateRouter><CampaignDetails></CampaignDetails></PrivateRouter>,
                 loader: async({params}) => {
-                    const res = await fetch(`http://localhost:5000/campaigns/${params.id}`)
+                    const res = await fetch(`https://b10-a10-crowd-funding-server.vercel.app/campaigns/${params.id}`)
                     const campaign = await res.json();
                     return campaign;
                 }
             },
             {
                 path: '/updateCampaign/:id',
-                element: <UpdateCampaign></UpdateCampaign>,
+                element: <PrivateRouter><UpdateCampaign></UpdateCampaign></PrivateRouter>,
                 loader: async({params}) => {
-                    const res = await fetch(`http://localhost:5000/campaigns/${params.id}`)
+                    const res = await fetch(`https://b10-a10-crowd-funding-server.vercel.app/campaigns/${params.id}`)
                     const campaign = await res.json()
                     return campaign;
                 }
             },
             {
                 path: '/addCampaign',
-                element: <AddCampaignPage></AddCampaignPage> ,
+                element: <PrivateRouter><AddCampaignPage></AddCampaignPage></PrivateRouter> ,
             },
             
             

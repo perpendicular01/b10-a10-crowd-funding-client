@@ -13,9 +13,9 @@ const MyDonationPage = () => {
         if (!user?.email) return;
 
         const fetchCampaigns = async () => {
-            const res = await fetch(`http://localhost:5000/myDonations?email=${user.email}`)
+            const res = await fetch(`https://b10-a10-crowd-funding-server.vercel.app/myDonations?email=${user.email}`)
             const data = await res.json()
-            console.log(data)
+            // console.log(data)
             setCampaigns(data)
         }
         fetchCampaigns();
@@ -25,24 +25,24 @@ const MyDonationPage = () => {
 
     return (
         <div>
-            <h2 className='text-3xl font-bold text-red-950 underline pt-20 lg:pt-28 pb-8 ml-4 lg:ml-52'> See your donations:   </h2>
-            <div className='w-[80%] md:w-[96%] lg:w-[70%] mx-auto '>
+            <h2 className='text-xl md:text-2xl lg:text-3xl font-bold text-red-950 underline pt-20 lg:pt-28 pb-8 ml-4 lg:ml-52'> See your donations:   </h2>
+            <div className='w-[80%] md:w-[76%] lg:w-[70%] mx-auto '>
 
 
 
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-5 lg:gap-6'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-6'>
                     {campaigns.map((it) => {
-                        const { _id: id, name, email, photo, title, type, description } = it;
+                        const { _id: id, campaignId, name, email, photo, title, type, description } = it;
 
                         return (
                             <div
                                 key={id}
-                                className="card bg-[#D9EAFD] rounded-2xl shadow-xl md:w-[250px] lg:w-[350px] ">
+                                className="card bg-[#D9EAFD] rounded-2xl shadow-xl md:w-[280px] md:h-[470px] lg:w-[350px] ">
                                 <figure className='rounded-xl'>
                                     <img
                                         src={photo}
 
-                                        className="w-[85%] h-auto md:w-[220px] md:h-[170px] lg:w-[320px] lg:h-[200px] rounded-[30px] lg:rounded-2xl pt-6 md:pt-3 object-cover"
+                                        className="w-[85%] h-auto md:w-[250px] md:h-[200px] lg:w-[320px] lg:h-[200px] rounded-[30px]  pt-6 md:pt-4 object-cover"
                                     />
                                 </figure>
                                 <div
@@ -56,10 +56,13 @@ const MyDonationPage = () => {
                                             {description}
                                         </p>
                                     </div>
+
                                     <div className="flex justify-start mt-3">
-                                        <button className="px-4 bg-[#FFF2C2] text-base font-medium py-2 rounded-xl">
-                                            Details
-                                        </button>
+                                        <Link to={`/campaign/${campaignId}`}>
+                                            <button className="px-4 bg-[#FFF2C2] text-base font-medium py-2 rounded-xl">
+                                                Details
+                                            </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

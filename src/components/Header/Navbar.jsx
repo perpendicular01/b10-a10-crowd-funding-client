@@ -8,7 +8,7 @@ import { useContext } from "react";
 
 const Navbar = () => {
     const {user, signOutUser} = useContext(AuthContext) 
-    console.log(user)
+    // console.log(user)
 
     const path = useLocation().pathname;
     const navigate = useNavigate()
