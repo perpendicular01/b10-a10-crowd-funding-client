@@ -9,6 +9,7 @@ import MyCampaignPage from "../Pages/MyCampaignPage";
 import MyDonationPage from "../Pages/MyDonationPage";
 import AddCampaignPage from "../Pages/AddCampaignPage";
 import CampaignDetails from "../Pages/CampaignDetails";
+import UpdateCampaign from "../Pages/UpdateCampaign";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,15 @@ const router = createBrowserRouter([
                 loader: async({params}) => {
                     const res = await fetch(`http://localhost:5000/campaigns/${params.id}`)
                     const campaign = await res.json();
+                    return campaign;
+                }
+            },
+            {
+                path: '/updateCampaign/:id',
+                element: <UpdateCampaign></UpdateCampaign>,
+                loader: async({params}) => {
+                    const res = await fetch(`http://localhost:5000/campaigns/${params.id}`)
+                    const campaign = await res.json()
                     return campaign;
                 }
             },
