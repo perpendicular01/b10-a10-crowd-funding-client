@@ -1,8 +1,30 @@
-# React + Vite
+# FundFusion - A Crowd Funding Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Site
+https://crowd-funding-pdpepe-4e980.web.app/
+## Overview
+FundFusion is a crowdfunding platform that allows users to create, manage, and support various fundraising campaigns. Whether it's for personal needs, creative projects, or startups, users can contribute financially and make a difference.
 
-Currently, two official plugins are available:
+## Features
+- **User Authentication**: Secure login and registration using email/password with Google authentication option.
+- **Campaign Management**: Users can create, update, and delete their own campaigns.
+- **Running Campaigns**: Displays active campaigns with deadlines that haven't passed.
+- **Donation System**: Users can donate to campaigns and track their contributions.
+- **Protected Routes**: Certain pages are accessible only to authenticated users.
+- **Sorting & Filtering**: Campaigns can be sorted by minimum donation amount.
+- **Dark/Light Theme**: Toggle between dark and light modes.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop views.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+### Frontend
+- React.js
+- Tailwind CSS
+- React Router
+- Sweetalert2 (for notifications)
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB (No Mongoose, direct MongoDB queries)
+- Firebase Authentication
+
