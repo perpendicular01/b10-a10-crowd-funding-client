@@ -1,9 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../../Contexts/AuthProvider';
+import animation from '../../assets/Animation-1.json'
+import Lottie from "lottie-react";
 
 
 const AddCampaignForm = () => {
+    const { user } = useContext(AuthContext)
+    console.log(user)
+    const nam = user.displayName;
+    const mail = user.email;
+    console.log(nam, mail)
     const navigate = useNavigate();
     const [error, setError] = useState('');
 
@@ -54,10 +62,18 @@ const AddCampaignForm = () => {
 
 
     return (
-        <div className='max-w-[600px] mx-auto bg-[#F8FAFC] mt-12'>
-            <h3 className='pt-20 text-center font-bold opacity-80 text-2xl md:text-3xl text-blue-950 '> Add New Campaign </h3>
+        <div className='max-w-[600px] mx-auto bg-[#F8FAFC] '>
+            <div className="flex items-center justify-center gap-3">
+                <h3 className="pt-20 text-center font-bold opacity-80 text-2xl md:text-3xl text-blue-950">
+                    Add New Campaign
+                </h3>
+                <div className="w-24 h-24 mt-20"> {/* Adjust size as needed */}
+                    <Lottie animationData={animation} loop={true} />
+                </div>
+            </div>
+
             <form onSubmit={handleAddCampaign} className="card-body bg-white">
-                
+
                 <div className="flex justify-between">
                     <div className="form-control w-[49%]">
                         <label className="label mb-1">
@@ -68,6 +84,8 @@ const AddCampaignForm = () => {
                             type="text"
                             placeholder="name"
                             className="input input-bordered"
+                            value={nam}
+                            readOnly
                             required
                         />
                     </div>
@@ -80,6 +98,8 @@ const AddCampaignForm = () => {
                             type="email"
                             placeholder="email"
                             className="input input-bordered"
+                            value={mail}
+                            readOnly
                             required
                         />
                     </div>
@@ -88,7 +108,7 @@ const AddCampaignForm = () => {
                 <div className="form-control w-full mt-1">
                     <label className="label mb-2">
                         <span className="label-text text-black text-lg">Campaign Image URL</span>
-                    </label> 
+                    </label>
                     <input
                         name="photo"
                         type="url"
@@ -161,7 +181,7 @@ const AddCampaignForm = () => {
                     </div>
                 </div>
 
-                
+
 
                 {/* Description */}
                 <div className="form-control w-full mt-1">

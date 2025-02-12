@@ -8,8 +8,12 @@ const HomeCampaigns = () => {
         const fetchCampaigns = async() => {
             const res = await fetch('https://b10-a10-crowd-funding-server.vercel.app/campaigns');
             const data = await res.json()
+            const today = new Date().toISOString().split('T')[0];
 
-            setCampaigns(data.slice(0, 6));
+            // Filter only running campaigns
+             const runningCampaigns = data.filter(campaign => campaign.deadline > today);
+
+            setCampaigns(runningCampaigns.slice(0, 6));
             // console.log(data)
         }
 

@@ -9,6 +9,7 @@ import slider3 from '../../assets/banner3.avif';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
+import { Typewriter } from 'react-simple-typewriter';
 
 const HomeBanner = () => {
   useEffect(() => {
@@ -62,7 +63,17 @@ const HomeBanner = () => {
                 data-aos="zoom-out"
                 className="text-white pt-5 font-bold text-xl sm:text-3xl md:text-4xl lg:text-5xl max-[80%]"
               >
-                {slide.title}
+                <Typewriter
+            words={[`${slide.title}`]}
+            loop={5}
+            cursor
+            
+            typeSpeed={80}
+            deleteSpeed={70}
+            delaySpeed={2000}
+            
+            />
+                
               </h3>
               
               <p

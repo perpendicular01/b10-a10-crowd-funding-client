@@ -89,7 +89,7 @@ const MyCampaignPage = () => {
                                 const { _id: id, userName, title, type, minAmount, deadline } = it;
 
                                 return (
-                                    <tr key={id} className="hover:bg-green-300 text-sm md:text-base text-black text-opacity-90">
+                                    <tr key={id} className=" text-sm md:text-base text-black text-opacity-90">
                                         <th>{index + 1}</th>
 
                                         <td>{title}</td>
@@ -98,14 +98,14 @@ const MyCampaignPage = () => {
                                         <td>{deadline}</td>
                                         <td>
                                             <Link to={`/updateCampaign/${id}`}>
-                                                <button className="bg-blue-700  px-3 py-1 rounded-md text-white font-medium">
+                                                <button className="bg-blue-700 hover:bg-blue-300 hover:text-black   px-3 py-1 rounded-md text-white font-medium">
                                                     update
                                                 </button>
                                             </Link>
                                         </td>
                                         <td>
                                             <Link>
-                                                <button onClick={() => handleDeleteCampaign(id)} className="bg-red-700  px-3 py-1 rounded-md text-white font-medium">
+                                                <button onClick={() => handleDeleteCampaign(id)} className="bg-red-700 hover:bg-red-300 hover:text-black  px-3 py-1 rounded-md text-white font-medium">
                                                     delete
                                                 </button>
                                             </Link>

@@ -3,6 +3,7 @@ import React from "react";
 import Mission1 from "../../assets/mission1.png";
 import Mission2 from "../../assets/mission2.jpeg";
 import Mission3 from "../../assets/mission3.jpeg";
+import { Typewriter } from "react-simple-typewriter";
 
 const HomeMission = () => {
     const missions = [
@@ -28,7 +29,9 @@ const HomeMission = () => {
 
     return (
         <section className=" w-[95%] md:w-[70%] lg:w-[60%] mx-auto py-12 ">
-            <h2 className="text-red-950 mx-auto text-center text-3xl lg:text-4xl font-bold mb-8 md:mb-12">Our Mission</h2>
+            <h2 className="text-red-950 mx-auto text-center text-3xl lg:text-4xl font-bold mb-8 md:mb-12">
+                Our Mission
+            </h2>
             
             <div className=" space-y-8">
                 

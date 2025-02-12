@@ -4,6 +4,7 @@ import { FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Contexts/AuthProvider';
 import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 
 const Login = () => {
@@ -33,6 +34,10 @@ const Login = () => {
             const res = await signIn(email, password)
             setUser(res.user)
             // console.log(res.user)
+            Swal.fire({
+                title: "Login successfully",
+                icon: "success",
+            });
             navigate(location?.state ? location.state : '/')
             // previous page state a thake 
 
@@ -56,6 +61,10 @@ const Login = () => {
         try {
             const registerUser = await signInGoogle()
             setSuccess(true)
+            Swal.fire({
+                title: "Campaign updated successfully!",
+                icon: "success",
+            });
             // console.log(registerUser.user)
             navigate(location?.state ? location.state : '/')
         }
@@ -143,7 +152,7 @@ const Login = () => {
 
                     {/* Login Button */}
                     <div className="form-control mt-6 text-center">
-                        <button className="w-3/4 md:w-2/3 lg:w-1/2 px-10 py-2 rounded-lg bg-[#4B5563] text-white text-lg hover:bg-[#8da0bb]">
+                        <button className="w-3/4 md:w-2/3 lg:w-1/2 px-10 py-2 rounded-lg bg-[#4B5563] hover:bg-gray-700 text-white text-lg ">
                             Login
                         </button>
                     </div>

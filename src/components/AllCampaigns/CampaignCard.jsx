@@ -21,8 +21,8 @@ const CampaignCard = ({ campaign }) => {
         </div>
       </div>
       <Link to={`/campaign/${id}`}>
-        <button className="mt-4 w-full bg-[#FFF2C2] text-black font-medium py-2 px-4 rounded-lg hover:bg-yellow-500 transition duration-300">
-          Donate now
+        <button className="mt-4 w-full bg-[#FFF2C2] text-black font-medium py-2 px-4 rounded-lg hover:bg-yellow-200 transition duration-300">
+          See More
         </button>
       </Link>
 

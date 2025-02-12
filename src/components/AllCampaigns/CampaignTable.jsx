@@ -40,7 +40,7 @@ const CampaignTable = () => {
         <div className='w-[90%] mx-auto mt-14     '>
             <div className='flex justify-between items-center   mb-4 md:mb-8 '>
                 <h3 className='font-semibold text-black text-2xl ml-1 md:ml-2   '> All campaigns here </h3>
-                <button onClick={handleSortCampaigns} className="bg-green-400 hover:bg-green-900 transition-colors duration-200 px-6 py-1 font-medium rounded-md text-black"> Sort  </button>
+                <button onClick={handleSortCampaigns} className="bg-green-400 hover:bg-green-900 hover:text-white transition-colors duration-200 px-6 py-1 font-medium rounded-md text-black"> Sort  </button>
             </div>
 
             {/* campaigns in table format */}
@@ -62,7 +62,7 @@ const CampaignTable = () => {
                             const { _id: id, userName, title, type, minAmount, deadline } = it;
 
                             return (
-                                <tr key={id} className="hover:bg-green-300 text-sm md:text-base text-black text-opacity-90">
+                                <tr key={id} className="hover:bg-green-100 text-sm md:text-base text-black text-opacity-90">
                                     <th>{index + 1}</th>
                                     <td>{userName}</td>
                                     <td>{title}</td>
@@ -71,7 +71,7 @@ const CampaignTable = () => {
                                     <td>{deadline}</td>
                                     <td>
                                         <Link to={`/campaign/${id}`}>
-                                            <button className="bg-blue-200  px-3 py-1 rounded-md text-black font-medium">
+                                            <button className="bg-blue-200 hover:bg-blue-800 hover:text-white  px-3 py-1 rounded-md text-black font-medium">
                                                 see more
                                             </button>
                                         </Link>

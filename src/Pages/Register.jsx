@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Contexts/AuthProvider';
 import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const Register = () => {
     const [success, setSuccess] = useState(false);
@@ -43,6 +44,10 @@ const Register = () => {
             await updateProfileUser(profile);
             setUser(registerUser.user);
             navigate('/');
+            Swal.fire({
+                title: "Registration done",
+                icon: "success",
+            });
         } catch (error) {
             const message = error.message;
             toast.error(`Error Message: ${message}`, {
@@ -60,6 +65,10 @@ const Register = () => {
             const registerUser = await signInGoogle();
             setSuccess(true);
             navigate('/');
+            Swal.fire({
+                title: "Registration done",
+                icon: "success",
+            });
         } catch (error) {
             const message = error.message;
             toast.error(`Error Message: ${message}`, {
@@ -152,7 +161,7 @@ const Register = () => {
 
                     {/* Register Button */}
                     <div className="form-control mt-6 text-center">
-                        <button className="w-3/4 md:w-2/3 lg:w-1/2 px-10 py-2 rounded-lg bg-[#4B5563] text-white text-lg hover:bg-[#8da0bb]">
+                        <button className="w-3/4 md:w-2/3 lg:w-1/2 px-10 py-2 rounded-lg bg-[#4B5563] text-white text-lg hover:bg-gray-700">
                             Register
                         </button>
                     </div>

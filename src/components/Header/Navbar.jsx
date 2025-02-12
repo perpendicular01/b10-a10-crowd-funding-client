@@ -7,7 +7,7 @@ import { useContext } from "react";
 
 
 const Navbar = () => {
-    const {user, signOutUser} = useContext(AuthContext) 
+    const { user, signOutUser } = useContext(AuthContext)
     // console.log(user)
 
     const path = useLocation().pathname;
@@ -15,14 +15,14 @@ const Navbar = () => {
     // console.log(path)
 
     // signout
-    const handleSignOut = async(e) => {
+    const handleSignOut = async (e) => {
         e.preventDefault();
 
-        try{
+        try {
             await signOutUser()
             navigate('/auth/login')
         }
-        catch{ /* empty */ }
+        catch { /* empty */ }
     }
 
     // links
@@ -97,32 +97,31 @@ const Navbar = () => {
 
                 <div className="flex items-center gap-2 md:gap-8 ">
                     {
-                        user ? 
-                        <div className="flex items-center gap-2 md:gap-4 ">
-                            <div>
-                                <img className="rounded-full w-9 h-9 lg:w-10 lg:h-10" src={user.photoURL} alt="" />
-                            </div>
-                            <div>
-  <Link>
-    <button
-      onClick={handleSignOut}
-      className={`px-2 md:px-4 py-2 rounded-lg text-sm md:text-base font-medium ${
-        path === '/auth/login'
-          ? 'text-white bg-[#6C5B1D]'
-          : 'bg-[#BAC2CA] text-black'
-      }`}
-    >
-      Logout
-    </button>
-  </Link>
-</div>
+                        user ?
+                            <div className="flex items-center gap-2 md:gap-4 ">
+                                <div>
+                                    <img className="rounded-full w-9 h-9 lg:w-10 lg:h-10" src={user.photoURL} alt="" />
+                                </div>
+                                <div>
+                                    <Link>
+                                        <button
+                                            onClick={handleSignOut}
+                                            className={`px-2 md:px-4 py-2 rounded-lg text-sm md:text-base font-medium ${path === '/auth/login'
+                                                    ? 'text-white bg-[#6C5B1D]'
+                                                    : 'bg-[#BAC2CA] text-black hover:bg-gray-700 hover:text-white'
+                                                }`}
+                                        >
+                                            Logout
+                                        </button>
+                                    </Link>
+                                </div>
 
-                        </div>
-                        :
-                        <div className="flex items-center gap-2 md:gap-5 ">
-                            <Link to="/auth/login"><button className={`px-2 md:px-3 lg:px-4 py-1 lg:py-2 rounded-lg text-sm md:text-base  font-medium ${path === '/auth/login' ? "text-white bg-[#4B5563]" : "bg-[#BAC2CA] text-black"}`}>  Login </button></Link>
-                            <Link to="/auth/register">   <button className={`px-2 md:px-3 lg:px-4 py-1 lg:py-2 rounded-lg text-sm md:text-base font-medium ${path === '/auth/register' ? "text-white bg-[#4B5563]" : "bg-[#BAC2CA] text-black"}`}> Register </button></Link>
-                        </div>
+                            </div>
+                            :
+                            <div className="flex items-center gap-2 md:gap-5 ">
+                                <Link to="/auth/login"><button className={`px-2 md:px-3 lg:px-4 py-1 lg:py-2 rounded-lg text-sm md:text-base  font-medium ${path === '/auth/login' ? "text-white bg-[#4B5563] hover:bg-gray-700" : "bg-[#BAC2CA] text-black"}`}>  Login </button></Link>
+                                <Link to="/auth/register">   <button className={`px-2 md:px-3 lg:px-4 py-1 lg:py-2 rounded-lg text-sm md:text-base font-medium ${path === '/auth/register' ? "text-white bg-[#4B5563] hover:bg-gray-700" : "bg-[#BAC2CA] text-black"}`}> Register </button></Link>
+                            </div>
                     }
                 </div>
             </div>
