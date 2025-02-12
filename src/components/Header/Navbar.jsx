@@ -4,6 +4,7 @@ import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { IoIosMenu } from "react-icons/io";
 import { AuthContext } from "../../Contexts/AuthProvider";
 import { useContext } from "react";
+import ThemeTooggle from "../ThemeComponent/ThemeTooggle";
 
 
 const Navbar = () => {
@@ -71,7 +72,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="bg-[#E5F1FF] ">
+        <div className="bg-[#E5F1FF] dark:bg-gray-900 ">
             <div className="w-[95%] lg:w-[90%] mx-auto flex justify-between items-center py-2 md:py-2 lg:py-3   text-black">
                 {/* for small device only */}
                 <div className="md:hidden">
@@ -84,9 +85,9 @@ const Navbar = () => {
                 </div>
 
                 {/* left */}
-                <h2 className="text-lg lg:text-2xl font-bold ">FundFusion</h2>
+                <h2 className="text-lg lg:text-2xl dark:text-white font-bold ">FundFusion</h2>
                 {/* for md middle */}
-                <div className="hidden list-none md:flex items-center gap-5 text-sm lg:text-base">
+                <div className="hidden list-none md:flex items-center gap-5 text-sm lg:text-base dark:text-gray-300 ">
                     {links}
                 </div>
                 {/* right side */}
@@ -96,6 +97,7 @@ const Navbar = () => {
                 </div> */}
 
                 <div className="flex items-center gap-2 md:gap-8 ">
+                    <ThemeTooggle></ThemeTooggle>
                     {
                         user ?
                             <div className="flex items-center gap-2 md:gap-4 ">

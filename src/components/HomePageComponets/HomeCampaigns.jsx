@@ -26,10 +26,10 @@ const HomeCampaigns = () => {
     return (
         <div>
 
-            <h2 className='text-red-950 mx-auto text-center text-xl md:text-2xl lg:text-3xl font-bold mb-8 mt-10 md:mb-12'> Current Campaigns </h2>
+            <h2 className='text-red-950 dark:text-white mx-auto text-center text-xl md:text-2xl lg:text-3xl font-bold mb-8 mt-10 md:mb-12'> Current Campaigns </h2>
             
 
-            <div className='w-[75%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7'>
+            <div className='w-[75%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 pb-10'>
                 {
                     campaigns.map(campaign => (<CampaignCard key={campaign.id} campaign={campaign} ></CampaignCard>))
                 }

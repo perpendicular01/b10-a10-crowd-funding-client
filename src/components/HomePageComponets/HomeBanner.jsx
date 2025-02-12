@@ -78,28 +78,28 @@ const HomeBanner = () => {
               
               <p
                 data-aos="fade-down-right"
-                className="text-white pt-3 md:pt-5 pb-5 opacity-60 text-sm md:text-lg md:inline-block max-w-[600px] mx-auto font-Roboto"
+                className="text-white  pt-3 md:pt-5 pb-5 opacity-60 text-sm md:text-lg md:inline-block max-w-[600px] mx-auto font-Roboto"
               >
                 {slide.subtitle}
               </p>
               
-              <Link to='/allCampaigns'> <button className="text-black bg-[#F2EEE0] text-sm md:text-lg  rounded-xl py-1 md:py-2 px-3 md:px-4  flex items-center gap-1">
+              <Link to='/allCampaigns'> <button className="text-black bg-[#F2EEE0] dark:bg-gray-800 dark:text-white  text-sm md:text-lg  rounded-xl py-1 md:py-2 px-3 md:px-4  flex items-center gap-1">
                  <MdOutlineExplore />  {slide.buttonText}
               </button> </Link>
             </div>
           </div>
 
           {/* Navigation Buttons */}
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform  justify-between">
             <a
               href={`#slide${index === 0 ? slides.length : index}`}
-              className="btn btn-circle"
+              className="btn btn-circle dark:bg-gray-600 dark:text-white "
             >
               ❮
             </a>
             <a
               href={`#slide${index === slides.length - 1 ? 1 : index + 2}`}
-              className="btn btn-circle"
+              className="btn btn-circle dark:bg-gray-600 dark:text-white "
             >
               ❯
             </a>
